@@ -1,0 +1,19 @@
+{
+  "name": "lido-balance-reader",
+  "version": "0.0.1",
+  "description": "Reads the stETH balance of an address.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lido",
+    "stETH"
+  ],
+  "author": "Anders Brownworth",
+  "license": "MIT",
+  "dependencies": {
+    "web3-eth-contract": "^1.8.1",
+    "web3-utils": "^1.8.1"
+  }
+}
