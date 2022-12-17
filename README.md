@@ -30,3 +30,9 @@ URI=http://example.com:8545 node app 0x7153d2ef9f14a6b1bb2ed822745f65e58d836c3f
 ```
 Sat, 17 Dec 2022 04:00:01 GMT balance 59416.3961092668570237 shares 53969.391556769290368068 totalPooledEther 4807173.129287314948053176 totalShares 4366475.011688289253384975
 ```
+
+### Notes
+
+The thing that makes this interesting is we are reading an upgradable contract. You'll see there
+are two ABI .json files in the repository. One is the proxy contract and the other is the
+implementation. We have to read through the proxy contract as you can see in `app.js`.
