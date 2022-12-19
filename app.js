@@ -19,6 +19,6 @@ const address = process.argv[2] ? process.argv[2] : '0x41318419cfa25396b47a94896
     const balance = Utils.fromWei(await contract.methods.balanceOf(address).call());
     const shares = Utils.fromWei(await contract.methods.sharesOf(address).call());
 
-    console.log(new Date().toUTCString(), 'balance', balance, 'shares', shares, 'totalPooledEther', totalPooledEther, 'totalShares', totalShares);
+    console.log('"' + new Date().toUTCString() + '",balance,' + balance + ',shares,' + shares + ',totalPooledEther,' + totalPooledEther + ',totalShares,' + totalShares);
 
 })();
