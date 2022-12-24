@@ -4,6 +4,8 @@ const fs = require('fs');
 
 const address = process.argv[2] ? process.argv[2] : '0x41318419cfa25396b47a94896ffa2c77c6434040';
 
+const dateOptions = {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'UTC'};
+
 (async () => {
     Contract.setProvider(process.env.URI ? process.env.URI : 'http://localhost:8545');
 
@@ -19,6 +21,6 @@ const address = process.argv[2] ? process.argv[2] : '0x41318419cfa25396b47a94896
     const balance = Utils.fromWei(await contract.methods.balanceOf(address).call());
     const shares = Utils.fromWei(await contract.methods.sharesOf(address).call());
 
-    console.log('"' + new Date().toUTCString() + '",balance,' + balance + ',shares,' + shares + ',totalPooledEther,' + totalPooledEther + ',totalShares,' + totalShares);
+    console.log('"' + new Date().toLocaleDateString('en-US', dateOptions) + '",balance,' + balance + ',shares,' + shares + ',totalPooledEther,' + totalPooledEther + ',totalShares,' + totalShares);
 
 })();
